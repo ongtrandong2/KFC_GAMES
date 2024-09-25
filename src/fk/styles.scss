@@ -1,0 +1,184 @@
+@import "src/shared/_global.scss";
+@import "src/shared/_buttons.scss";
+
+@keyframes flying {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-5px, -5px);
+  }
+  40% {
+    transform: translate(-5px, 5px);
+  }
+  60% {
+    transform: translate(5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-7px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(7px);
+  }
+  75% {
+    transform: translateY(-5px) translateX(3px);
+  }
+}
+
+.Container {
+  .Control {
+    position: relative;
+
+    &:before {
+      content: "";
+      left: 0;
+      top: 100px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(/src/fk/images/backdrop-fk-top.png) no-repeat center top;
+      background-size: contain;
+      @media screen and (min-width: 376px) {
+        top: 100px;
+      }
+      z-index: -1;
+    }
+    &:after {
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(/src/fk/images/backdrop-fk-bottom.png) no-repeat center
+        bottom;
+      background-size: contain;
+      z-index: -1;
+    }
+
+    .BgControl {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: url(/src/fk/images/backdrop-fk-center.png) no-repeat center
+        center;
+      background-size: contain;
+    }
+  }
+
+  .GameBoard {
+    background: url(/src/fk/images/backdrop-fk-gp-center.png) no-repeat center
+      35%;
+    background-size: contain;
+    z-index: 1;
+
+    &:after {
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(/src/fk/images/backdrop-fk-gp-bottom.png) no-repeat center
+        bottom;
+      background-size: contain;
+      z-index: -1;
+    }
+    .zone {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      .lane {
+        position: relative;
+        flex: 0 0 33.33333%;
+        &:nth-child(2) {
+          background-image: url("/src/fk/images/lane-line.png");
+          background-size: 100% 100%;
+        }
+      }
+    }
+    .kite {
+      $size: 85px;
+      position: absolute;
+      bottom: 0;
+      width: $size;
+      left: calc(100vw / 2 - #{$size / 2});
+      height: #{$size * 2};
+      z-index: 4;
+      transition: all 0.2s ease-out;
+      background-image: url("/src/fk/images/kite.png");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      animation: flying 5s ease-in-out infinite;
+      margin-bottom: 5px;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -90%;
+        left: 25%;
+        width: 80%;
+        height: 100%;
+        background-image: url("/src/fk/images/kite-1.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        // animation: flying 5s ease-in-out infinite;
+      }
+      &.recoil-left {
+        transform: rotate(-10deg);
+      }
+      &.recoil-right {
+        transform: rotate(10deg);
+      }
+    }
+    .cloud {
+      position: absolute;
+      width: 100px;
+      height: 61px;
+      background-repeat: no-repeat;
+      transition: top 0.1s linear;
+      animation: floating 5s ease-in-out infinite;
+      z-index: 1;
+    }
+    .score-object {
+      position: absolute;
+      animation: floating 5s ease-in-out infinite;
+      z-index: 3;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: contain;
+      &.bucket {
+        width: 63px; /* 105px * 0.6 */
+        height: 69px; /* 115px * 0.6 */
+        background-image: url("/src/rs/images/bucket.png");
+      }
+      &.bird {
+        width: 52.8px; /* 88px * 0.6 */
+        height: 52.8px; /* 106px * 0.6 */
+        background-image: url("/src/fk/images/bird.png");
+      }
+      &.popcorn {
+        width: 40px;
+        height: 40px;
+        background-image: url("/src/rs/images/popcorn.png");
+      }
+    }
+  }
+}

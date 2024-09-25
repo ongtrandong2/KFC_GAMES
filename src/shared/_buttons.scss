@@ -1,0 +1,101 @@
+.btn {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-family: "LuckiestGuy", sans-serif;
+  &-back {
+    border: 0;
+    background: none;
+    width: 24px;
+    height: 24px;
+    img {
+      height: 100%;
+    }
+  }
+
+  &-rule {
+    border-radius: 32px;
+    padding: 10px 16px 6px;
+    @media screen and (min-width: 376px) {
+      font-size: 16px;
+    }
+    font-size: 14px;
+    border: 1px solid #c02126;
+    background-color: #e6403f;
+    color: #ffffff;
+    box-shadow: 0 4px 2px 0 rgba(165, 107, 82, 0.25);
+  }
+  &-primary,
+  &-main {
+    position: relative;
+    background: linear-gradient(180deg, #ff6261, #d31319);
+    color: #fff;
+    border-radius: 64px;
+    padding: 16px 30px 12px;
+    font-size: 28px;
+    border: 2px solid #c02126;
+    box-shadow: 5px 5px 8px 0 rgba(201, 143, 90, 1);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    @media screen and (min-width: 376px) {
+      font-size: 28px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+      width: 13px;
+      height: 8px;
+      background-image: url("/src/shared/images/btn-before.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      right: 6px;
+      width: 42px;
+      height: 26px;
+      background-image: url("/src/shared/images/btn-after.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  &-main {
+    background: var(--main-light-color);
+    font-size: 24px;
+  }
+  &-secondary {
+    position: relative;
+    background-color: #fbe2e4;
+    border-radius: 64px;
+    font-size: 24px;
+    color: #c02126;
+    padding: 14px 22px 8px;
+    border: 2px solid #c05050;
+    box-shadow: 5px 5px 8px 0 rgba(201, 143, 90, 1);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+      width: 13px;
+      height: 8px;
+      background-image: url("/src/shared/images/btn-before.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      right: 6px;
+      width: 42px;
+      height: 26px;
+      background-image: url("/src/shared/images/btn-after.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}

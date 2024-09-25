@@ -1,0 +1,203 @@
+@import "src/shared/_global.scss";
+@import "src/shared/_buttons.scss";
+
+#Container {
+  &.playing {
+    #Control {
+      display: none;
+    }
+  }
+  .Control {
+    position: relative;
+    .BgControl {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(/src/msc/images/backdrop-msc-center.png) no-repeat center
+        right;
+      background-size: 85%;
+      z-index: -1;
+      @media screen and (min-width: 376px) {
+        background-size: contain;
+      }
+    }
+
+    &:before {
+      content: "";
+      left: 0;
+      top: 15%;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(/src/msc/images/backdrop-msc-top.png) no-repeat center top;
+      background-size: contain;
+      @media screen and (min-width: 376px) {
+        top: 23%;
+      }
+      z-index: -1;
+    }
+
+    &:after {
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(/src/msc/images/backdrop-msc-bottom.png) no-repeat center
+        bottom;
+      background-size: contain;
+      z-index: -1;
+    }
+  }
+  .GameBoard {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &:after {
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(/src/msc/images/backdrop-msc-gp-bottom.png) no-repeat
+        center bottom;
+      background-size: contain;
+      z-index: -1;
+    }
+    .Hand {
+      position: absolute;
+      width: 71px;
+      height: 70px;
+      display: none;
+      z-index: 1;
+    }
+    .Mandarin {
+      margin-top: 0;
+      width: 50%;
+      height: 70%;
+      margin: auto;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-image: url("/src/msc/images/mandarin-border.png"),
+        url("/src/msc/images/mandarin-bg.png");
+      background-size:
+        100% 100%,
+        100% 100%;
+      @media screen and (min-width: 376px) {
+        width: 60%;
+        height: 75%;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 70%;
+        background: url(/src/msc/images/characters.png) no-repeat center center;
+        background-size: 100% 100%;
+      }
+      &-Inner {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2px;
+        @media screen and (min-width: 376px) {
+          padding: 5px;
+        }
+      }
+
+      .bucket-stack {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 95px;
+        @media screen and (min-width: 376px) {
+          height: 130px;
+        }
+      }
+      .popcorn-table {
+        border-radius: 10px;
+        padding: 5px 0;
+        background-image: url("/src/msc/images/mandarin-ib.png"),
+          url("/src/msc/images/mandarin-ii.png");
+        background-size:
+          100% 101%,
+          103% 100%;
+      }
+      .row {
+        display: flex;
+        gap: 0;
+
+        .popcorn-stack {
+          position: relative;
+          width: 100%;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 2px;
+          flex-wrap: wrap;
+          padding: 5px;
+
+          @media screen and (min-width: 376px) {
+            height: 80px;
+          }
+          &.selected:before {
+            content: "";
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -60%);
+            background-size: cover;
+            background-image: url(/src/msc/images/up-arrow.png);
+            z-index: 1;
+          }
+
+          &.selected:after {
+            content: "";
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 60%) rotate(180deg);
+            background-size: cover;
+            background-image: url(/src/msc/images/up-arrow.png);
+            z-index: 1;
+          }
+        }
+      }
+
+      .bucket {
+        width: 45px;
+
+        @media screen and (min-width: 376px) {
+          width: 65px;
+        }
+      }
+      .popcorn {
+        max-width: 20px;
+        flex-basis: 33.33%;
+
+        @media screen and (min-width: 376px) {
+          max-width: 25px;
+        }
+      }
+    }
+  }
+}

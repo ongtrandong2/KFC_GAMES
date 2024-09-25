@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+#app {
+  height: 100%;
+  line-height: 1.25;
+}
+.Container.ContainerResult {
+  background-image: url(/src/shared/images/bg-wheel-result.png);
+}
+.WheelContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: url(/src/shared/images/backdrop-bottom.png) no-repeat center
+    bottom;
+  background-size: contain;
+  &:before {
+    content: "";
+    left: 0;
+    top: 5%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url(/src/shared/images/backdrop-top.png) no-repeat center top;
+    background-size: contain;
+    @media screen and (min-width: 376px) {
+      top: 5%;
+    }
+  }
+  .Control {
+    height: auto !important;
+    &:before,
+    &:after {
+      background: none !important;
+    }
+    .GameName {
+      text-align: center;
+      margin-top: 15px;
+      padding: 0 5px;
+      flex-direction: column;
+      line-height: 1.25;
+
+      @media screen and (min-width: 376px) {
+        margin-top: 30px;
+      }
+    }
+    .title {
+      font-size: 34px;
+      margin-bottom: 11px;
+      @media screen and (min-width: 376px) {
+        font-size: 34px;
+      }
+    }
+    p {
+      color: var(--text-color);
+      font-family: Cabin, sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      @media screen and (min-width: 376px) {
+        font-size: 20px;
+      }
+    }
+  }
+  .Menu {
+    z-index: 9;
+    margin-bottom: 15px;
+    text-align: center;
+    * {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 16px;
+    }
+    @media screen and (min-width: 376px) {
+      margin-bottom: 20px;
+    }
+    a {
+      font-family: Cabin, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--text-color);
+    }
+  }
+  .WheelGift {
+    z-index: 9;
+    text-align: center;
+    font-family: Cabin, sans-serif;
+    line-height: 1.25;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    color: var(--text-color);
+    margin: auto 0;
+    font-size: 20px;
+    @media screen and (min-width: 376px) {
+      font-size: 28px;
+    }
+    p {
+      margin-top: 10px;
+    }
+    img {
+      width: 45%;
+      @media screen and (min-width: 376px) {
+        width: 60%;
+      }
+      object-fit: cover;
+    }
+  }
+}
+#wheel {
+  position: relative;
+  user-select: none;
+  transform: scale(0.85);
+  @media screen and (min-width: 376px) {
+    transform: scale(1);
+  }
+}
+
+#wheel-circle {
+  z-index: 1;
+}
+
+#arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+}
+
+#WheelResultScreen {
+  justify-content: inherit;
+}

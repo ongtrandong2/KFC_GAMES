@@ -1,0 +1,143 @@
+@import "src/shared/_global.scss";
+@import "src/shared/_buttons.scss";
+
+@keyframes swing {
+  0% {
+    transform: rotateX(0deg);
+    z-index: 1;
+  }
+  50% {
+    z-index: 1;
+  }
+  51% {
+    z-index: 3;
+  }
+  100% {
+    transform: rotateX(-360deg);
+    z-index: 3;
+  }
+}
+
+.swing {
+  animation: swing 1500ms infinite linear;
+  transform-origin: top;
+  box-sizing: border-box;
+}
+.Container {
+  .Control {
+    position: relative;
+    .BgControl {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: url(/src/rs/images/backdrop-rs-center.png) no-repeat center
+        center;
+      background-size: contain;
+    }
+
+    &:before {
+      content: "";
+      left: 0;
+      top: 100px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(/src/rs/images/backdrop-rs-top.png) no-repeat center top;
+      background-size: contain;
+      @media screen and (min-width: 376px) {
+        top: 100px;
+      }
+      z-index: -1;
+    }
+    &:after {
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(/src/rs/images/backdrop-rs-bottom.png) no-repeat center
+        bottom;
+      background-size: contain;
+      z-index: -1;
+    }
+  }
+  .GameBoard {
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url(/src/rs/images/backdrop-rs-gp-center.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      left: 0;
+      top: 40%;
+      width: 100%;
+      height: 304px;
+    }
+
+    &:after {
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(/src/rs/images/backdrop-rs-gp-bottom.png) no-repeat center
+        bottom;
+      background-size: contain;
+      z-index: -1;
+    }
+    .Playground {
+      position: absolute;
+      bottom: 100px;
+      top: 0;
+      left: 0;
+      right: 0;
+      .rope {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        z-index: 3;
+        transform-origin: top;
+      }
+      .character {
+        position: absolute;
+        height: auto;
+        bottom: 0;
+        left: 50%;
+        width: 140px;
+        transform: translateX(-50%);
+        z-index: 2;
+      }
+
+      .score-object {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        &.bucket {
+          width: 63px; /* 105px * 0.6 */
+          height: 69px; /* 115px * 0.6 */
+          background-image: url("/src/rs/images/bucket.png");
+        }
+        &.egg {
+          width: 52.8px; /* 88px * 0.6 */
+          height: 63.6px; /* 106px * 0.6 */
+          background-image: url("/src/rs/images/egg.png");
+        }
+        &.popcorn {
+          width: 40px;
+          height: 40px;
+          background-image: url("/src/rs/images/popcorn.png");
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>KFC Games</title>
+    <link rel="stylesheet" href="./src/baj/styles.scss" />
+  </head>
+
+  <body class="background-container">
+    <div class="Container">
+      <!-- Control-->
+      <div id="Control" class="Control">
+        <div id="Header" class="Header">
+          <div class="flex">
+            <button class="btn btn-back">
+              <img src="/src/shared/images/back.png" alt="" />
+            </button>
+            <img class="logo" src="./src/shared/images/kfc-logo.png" alt="" />
+          </div>
+          <button class="btn btn-rule" data-dialog-target="DialogRule">
+            Luật chơi
+          </button>
+        </div>
+        <div class="BgControl"></div>
+        <div class="GameName">
+          <h1 class="title">Banh đũa</h1>
+        </div>
+        <div id="Menu" class="Menu">
+          <button id="PlayTest" class="btn btn-secondary">Tập luyện</button>
+          <button id="Play" class="btn btn-primary">Chơi Ngay</button>
+        </div>
+      </div>
+      <!-- GameBoard-->
+      <div id="GameBoard" class="GameBoard">
+        <div id="HeaderGameBoard" class="Header HeaderGameBoard">
+          <div class="flex">
+            <img class="logo" src="./src/shared/images/kfc-logo.png" alt="" />
+          </div>
+        </div>
+        <div class="flex justify-content-center">
+          <div class="ScoreBox">
+            <span id="Score" class="Score">0</span><span>ĐIỂM</span>
+          </div>
+        </div>
+        <div class="Status">
+          <img
+            class="Avatar"
+            id="Avatar"
+            src="./src/shared/images/avatar.png"
+            alt=""
+          />
+          <div id="Progress" class="Progress">
+            <div class="Progress-Done"></div>
+          </div>
+          <div class="TimeBox"><span id="Time" class="Time">30</span></div>
+        </div>
+
+        <img
+          id="Ball"
+          class="ball"
+          src="./src/baj/images/ball.png"
+          alt="A ball"
+        />
+        <div id="GameTable" class="table"></div>
+
+        <img
+          id="HandLeft"
+          class="hand left"
+          src="./src/baj/images/hand-l.png"
+          alt="A hand"
+        />
+        <img
+          id="HandRight"
+          class="hand right"
+          src="./src/baj/images/hand-r.png"
+          alt="A hand"
+        />
+      </div>
+
+      <!-- Wheel -->
+      <div id="app">
+        <div id="WheelScreen" class="WheelContainer" style="display: none">
+          <!-- Control-->
+          <div id="WheelControl" class="Control" style="background: none">
+            <div id="WheelHeader" class="Header">
+              <div class="flex">
+                <img
+                  class="logo"
+                  src="./src/shared/images/kfc-logo.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="GameName">
+              <h1 class="title">
+                VÒNG QUAY<br />
+                MAY MẮN
+              </h1>
+              <p>
+                Chúc mừng bạn hoàn thành thử thách.<br />
+                Quay vòng quay để nhận giải thôi!
+              </p>
+            </div>
+          </div>
+          <div id="wheel">
+            <img id="arrow" src="/src/shared/images/arrow.svg" alt="" />
+            <svg id="wheel-circle">
+              <defs>
+                <linearGradient
+                  id="paint1_linear_2014_2106"
+                  x1="83.2646"
+                  y1="57.8447"
+                  x2="304.353"
+                  y2="278.935"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#FFF890" />
+                  <stop offset="0.14" stop-color="#FBE678" />
+                  <stop offset="0.24" stop-color="#F8D865" />
+                  <stop offset="0.28" stop-color="#DFB955" />
+                  <stop offset="0.34" stop-color="#C19140" />
+                  <stop offset="0.4" stop-color="#AB7532" />
+                  <stop offset="0.45" stop-color="#9D6429" />
+                  <stop offset="0.49" stop-color="#995E26" />
+                  <stop offset="0.52" stop-color="#9C6329" />
+                  <stop offset="0.55" stop-color="#A87232" />
+                  <stop offset="0.59" stop-color="#BA8C42" />
+                  <stop offset="0.64" stop-color="#D4B058" />
+                  <stop offset="0.68" stop-color="#F5DD73" />
+                  <stop offset="0.69" stop-color="#FBE578" />
+                  <stop offset="0.77" stop-color="#FFFDAA" />
+                  <stop offset="0.83" stop-color="#FBE578" />
+                  <stop offset="1" stop-color="#A45221" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div id="WheelMenu" class="Menu">
+            <button id="Spin" class="btn btn-primary">QUAY Ô MAY MẮN</button>
+          </div>
+        </div>
+        <div
+          id="WheelResultScreen"
+          class="WheelContainer"
+          style="display: none"
+        >
+          <!-- Control-->
+          <div id="WheelResultControl" class="Control" style="background: none">
+            <div id="WheelResultHeader" class="Header">
+              <div class="flex">
+                <img
+                  class="logo"
+                  src="./src/shared/images/kfc-logo.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="GameName"></div>
+          </div>
+          <div id="WheelGift" class="WheelGift"></div>
+          <div id="WheelResultMenu" class="Menu">
+            <button id="ReceiveMore" type="button" class="btn btn-primary">
+              NHẬN THÊM ƯU ĐÃI
+            </button>
+            <button id="Restart" type="button" class="btn btn-primary">
+              CHƠI TIẾP
+            </button>
+            <button id="ShareResult" class="btn btn-secondary">
+              CHIA SẺ KẾT QUẢ
+            </button>
+            <a href="javascript:void(0)" id="ReceiveMoreLink"
+              >Nhận thêm ưu đãi khác</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Dialog-->
+      <div class="Dialog" id="DialogFinish">
+        <div class="Dialog-Backdrop"></div>
+        <div class="Dialog-Content">
+          <div class="ScoreBox ScoreBoxDialog">
+            <span id="ScoreDialog" class="Score">0</span><span>ĐIỂM</span>
+          </div>
+          <p></p>
+          <button type="submit" class="btn btn-main"></button>
+        </div>
+      </div>
+      <!-- Rule -->
+      <div class="Rule" id="DialogRule" data-dialog-id="DialogRule">
+        <div class="flex flex-column h-full">
+          <div class="Header">
+            <button class="btn btn-back" data-dialog-target="DialogRule">
+              <img src="/src/shared/images/back.png" alt="" />
+            </button>
+            <h6>LUẬT CHƠI</h6>
+            <img
+              class="img-rule-top"
+              src="/src/shared/images/icon-rule-baj.svg"
+              alt=""
+            />
+          </div>
+          <div class="Content">
+            <div class="list-item">
+              <span class="icon-l"></span>
+              <span
+                >Bạn sẽ có 1 lần TẬP LUYỆN
+                <span class="strong">(không tính lượt chơi)</span> và 1 lần CHƠI
+                NGAY <span class="strong">(1 lượt chơi)</span>.</span
+              >
+            </div>
+            <div class="tabs">
+              <div class="tab-buttons">
+                <button class="btn tab-button" data-tab-id="task-tab">
+                  NHIỆM VỤ
+                </button>
+                <button class="btn tab-button active" data-tab-id="score-tab">
+                  CÁCH LẤY ĐIỂM
+                </button>
+              </div>
+
+              <div id="task-tab" class="tab-content">
+                <div class="list-item">
+                  <span class="icon-m"></span>
+                  <span>Quả banh sẽ tự động di chuyển lên xuống.</span>
+                </div>
+                <div class="list-item">
+                  <span class="icon-m"></span>
+                  <span
+                    >Trong thời gian quả banh bay trên không trung, nhanh tay,
+                    tinh mắt thu thập các thanh đũa.</span
+                  >
+                </div>
+                <div class="list-item">
+                  <span class="icon-m"></span>
+                  <span
+                    >Trong quá trình tham gia trò chơi sẽ xuất hiện các vật phẩm
+                    đặc biệt có thể giúp cộng thêm và trừ bớt điểm của bạn, hãy
+                    chú ý nhé!</span
+                  >
+                </div>
+                <div class="list-item">
+                  <span class="icon-l"></span>
+                  <span
+                    >Sau khi hoàn thành thử thách trong vòng 30s, bạn sẽ có cơ
+                    hội tham gia vòng quay may mắn để nhận quà từ KFC.</span
+                  >
+                </div>
+              </div>
+              <div id="score-tab" class="tab-content" style="display: none">
+                <div class="list-item">
+                  <span class="icon-l"></span>
+                  <span class="text-uppercase font-bold">Cách lấy điểm</span>
+                </div>
+                <div class="list-item-lv2">
+                  <span>Lấy thanh đũa </span
+                  ><img src="/src/baj/images/rule-chopstick.png" alt="" />
+                  <span> = +10 điểm</span>
+                </div>
+                <div class="list-item-lv2">
+                  <span>Lấy</span
+                  ><img src="/src/baj/images/rule-cake.png" alt="" />
+                  <span> = +20 điểm</span>
+                </div>
+                <div class="list-item">
+                  <span class="icon-l"></span>
+                  <span class="text-uppercase font-bold">Mất điểm</span>
+                </div>
+                <div class="list-item-lv2">
+                  <span>Chạm</span
+                  ><img src="/src/baj/images/rule-spoon.png" alt="" /><span>
+                    = -5 điểm</span
+                  >
+                </div>
+                <div class="list-item-lv2">
+                  <span>Chạm</span>
+                  <img src="/src/baj/images/rule-fork.png" alt="" /><span>
+                    = -10 điểm</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-content-center">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dialog-target="DialogRule"
+              >
+                ĐÃ HIỂU
+              </button>
+            </div>
+          </div>
+          <img
+            class="img-rule-bottom"
+            src="/src/baj/images/icon-rule-bottom.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <!-- Countdown-->
+      <div id="CountdownWrapper" class="Dialog Dialog_Countdown">
+        <div class="Dialog-Backdrop"></div>
+        <div class="Countdown"></div>
+      </div>
+    </div>
+    <div class="loading" id="Loading">
+      <div class="loading-backdrop"></div>
+      <img src="/src/shared/images/spinner.svg" alt="" />
+    </div>
+    <script type="module" src="/src/baj/index.ts"></script>
+  </body>
+</html>

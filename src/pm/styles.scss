@@ -1,0 +1,184 @@
+@import "src/shared/_global.scss";
+@import "src/shared/_buttons.scss";
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-7px) translateX(5px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(7px);
+  }
+  75% {
+    transform: translateY(-5px) translateX(3px);
+  }
+}
+
+.Container {
+  .Control {
+    &:before {
+      content: "";
+      left: 0;
+      top: 200px;
+      width: 100%;
+      height: 220px;
+      position: absolute;
+      background: url(/src/pm/images/backdrop-pm-top.png) no-repeat center
+        bottom;
+      background-size: 100%;
+      @media screen and (min-width: 376px) {
+        top: 200px;
+      }
+      z-index: -1;
+    }
+    &:after {
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(/src/pm/images/backdrop-pm-bottom.png) no-repeat center
+        bottom;
+      background-size: contain;
+      z-index: -1;
+    }
+
+    .BgControl {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: url(/src/pm/images/backdrop-pm-center.png) no-repeat center
+        center;
+      background-size: contain;
+    }
+  }
+  .GameBoard {
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url(/src/pm/images/backdrop-pm-gp-center.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      left: 0;
+      top: 22%;
+      width: 100%;
+      height: 304px;
+      z-index: -1;
+    }
+
+    &:after {
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url(/src/pm/images/backdrop-pm-gp-bottom.png) no-repeat center
+        bottom;
+      background-size: 100% 460px;
+      z-index: -1;
+    }
+    .yard {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      bottom: 75px;
+    }
+    .obstacle {
+      position: absolute;
+      bottom: 120px;
+      left: 0;
+      height: 170px;
+      width: 100%;
+      background: url("/src/pm/images/obstacle.png") no-repeat center center;
+      background-size: contain;
+    }
+    .bar {
+      position: absolute;
+      bottom: 60px;
+      left: -1px;
+      right: -1px;
+      width: 100%;
+      outline: 1px solid #59340f;
+      border: 3px solid #f7bb34;
+      height: 30px;
+      background: #ffffff url("/src/pm/images/bg-bar-yellow.png") repeat-x left
+        center;
+      box-sizing: border-box;
+      z-index: 4;
+      .zone {
+        position: absolute;
+        height: 24px;
+        flex: 1;
+        box-sizing: border-box;
+        &.green {
+          background: #ffffff url("/src/pm/images/bg-bar-green.png") repeat-x
+            left center;
+        }
+        &.red {
+          background: #ffffff url("/src/pm/images/bg-bar-red.png") repeat-x left
+            center;
+        }
+      }
+      .slider {
+        background-image: url("/src/pm/images/slider.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 33px;
+        height: 66px;
+        background-size: contain;
+        position: absolute;
+        top: 20px;
+        left: 350px;
+      }
+    }
+    .character {
+      position: absolute;
+      height: auto;
+      bottom: 0;
+      left: 20%;
+      width: 169px;
+      z-index: 2;
+    }
+
+    .score-object {
+      position: absolute;
+      bottom: 300px;
+      right: 7%;
+      background-size: contain;
+      background-position: center top;
+      background-repeat: no-repeat;
+      z-index: 2;
+      &.bucket {
+        width: 88.2px; /* 126px * 0.7 */
+        height: 96.6px; /* 138px * 0.7 */
+        background-image: url("/src/pm/images/bucket.png");
+      }
+      &.stone {
+        width: 105.6px;
+        height: 105.6px;
+        background-image: url("/src/pm/images/stone.png");
+      }
+      &.water {
+        width: 105.6px;
+        height: 105.6px;
+        background-image: url("/src/pm/images/water.png");
+      }
+      &.popcorn {
+        width: 88.2px;
+        height: 88.2px;
+        background-image: url("/src/pm/images/popcorn.png");
+        background-position: center center;
+        background-size: 50px 50px;
+      }
+    }
+  }
+}

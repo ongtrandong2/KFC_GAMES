@@ -1,0 +1,40 @@
+{
+  "name": "kfc-games",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:msc": "vite build",
+    "build:rs": "vite build",
+    "build:baj": "vite build",
+    "build:pm": "vite build",
+    "build:fk": "vite build",
+    "build:all": "pnpm build:msc && pnpm build:rs",
+    "preview:rs": "vite preview --outDir rs/dist",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.30",
+    "autoprefixer": "^10.4.19",
+    "jquery": "^3.7.1",
+    "postcss": "^8.4.38",
+    "prettier": "^3.3.2",
+    "sass": "^1.77.4",
+    "sharp": "^0.33.4",
+    "svgo": "^3.3.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-image-optimizer": "^1.1.8",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,html,scss,json}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
