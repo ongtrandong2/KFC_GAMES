@@ -96,12 +96,12 @@ export default abstract class AbstractGame {
     jQuery("#Play").on("click", (ev) => {
       ev.stopPropagation();
       // this.sendEvent({ event: "PREPARING" }), console.log("PREPARING");
-      this.sendEvent({event: "STARTING", user: {name: "Tên Khách", avatar: "https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"}});
-      jQuery("#Loading").css("display", "flex").fadeIn();
+      // jQuery("#Loading").css("display", "flex").fadeIn();
+      this.startGame();
     });
     jQuery("#PlayTest").on("click", (ev) => {
       ev.stopPropagation();
-      this.playTest()
+      this.playTest();
     });
     jQuery(".btn-back").on("click", (ev) => {
       ev.stopPropagation();

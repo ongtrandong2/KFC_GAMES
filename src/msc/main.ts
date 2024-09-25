@@ -104,8 +104,9 @@ class Game {
   public listener() {
     this.$play.on("click", (ev) => {
       ev.stopPropagation();
-      this.sendEvent({ event: "PREPARING" }), console.log("PREPARING");
-      jQuery("#Loading").css("display", "flex").fadeIn();
+      // this.sendEvent({ event: "PREPARING" }), console.log("PREPARING");
+      // jQuery("#Loading").css("display", "flex").fadeIn();
+      this.start(this.playTestMode);
     });
     this.$playTest.on("click", (ev) => {
       ev.stopPropagation();
