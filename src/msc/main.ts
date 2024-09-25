@@ -106,7 +106,7 @@ class Game {
       ev.stopPropagation();
       // this.sendEvent({ event: "PREPARING" }), console.log("PREPARING");
       // jQuery("#Loading").css("display", "flex").fadeIn();
-      this.start(this.playTestMode);
+      this.start();
     });
     this.$playTest.on("click", (ev) => {
       ev.stopPropagation();
