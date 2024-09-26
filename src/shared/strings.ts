@@ -38,10 +38,10 @@ export const GameResult = (name: string, score: number): string => `
     </div>
     <p>
         Bạn thật tuyệt vời!<br/>
-        Cảm ơn <strong>${name}</strong> đã cùng chúng tôi<br/>
+        Cảm ơn <strong>${name}</strong> đã tham gia<br/>
         khám phá hành trình tuổi thơ,<br/>
         Chúng mình có một món quà rất bất ngờ<br/>
-        dành riêng cho <strong>${name}</strong> đó
+        dành cho <strong>${name}</strong> đó
     </p>
 `;
 
