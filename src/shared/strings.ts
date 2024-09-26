@@ -8,14 +8,14 @@ export const GoodLuck = (name: string): string => `
     <p>
         Hy vọng <strong>${name}</strong> hài lòng<br/>
         với những trải nghiệm khó quên<br/>
-        cùng “Hành Trình Ký Ức” của KFC.
+        cùng “Hành Trình Ký Ức”.
     </p>
 `;
 
 export const CodeSent = (name: string): string => `
     <div class="ScoreBox ScoreBoxDialog ScoreBoxDialogEmpty"></div>
     <p>
-        KFC đã gửi code đã gửi tin nhắn qua Zalo.<br/>
+        Chúng mình đã gửi code đã gửi tin nhắn qua Zalo.<br/>
         <strong>${name}</strong> kiểm tra nhé
     </p>
 `;
@@ -38,9 +38,9 @@ export const GameResult = (name: string, score: number): string => `
     </div>
     <p>
         Bạn thật tuyệt vời!<br/>
-        Cảm ơn <strong>${name}</strong> đã cùng KFC<br/>
+        Cảm ơn <strong>${name}</strong> đã cùng chúng tôi<br/>
         khám phá hành trình tuổi thơ,<br/>
-        KFC có một món quà rất bất ngờ<br/>
+        Chúng mình có một món quà rất bất ngờ<br/>
         dành riêng cho <strong>${name}</strong> đó
     </p>
 `;
