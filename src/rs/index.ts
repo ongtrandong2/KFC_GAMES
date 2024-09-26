@@ -259,7 +259,7 @@ class Game extends AbstractGame {
 
 const game = new Game({
   element: document.getElementById("Playground")!,
-  time: 10,
+  time: 30,
   luck: 0.5,
 });
 game.init();

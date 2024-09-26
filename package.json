@@ -12,7 +12,8 @@
     "build:fk": "vite build",
     "build:all": "pnpm build:msc && pnpm build:rs",
     "preview:rs": "vite preview --outDir rs/dist",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "echo 'No tests specified' && exit 0"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.30",

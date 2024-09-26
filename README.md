@@ -7,4 +7,3 @@
 ## III. Build
 - Build all games: `npx pnpm build:all`
 - Build specific game by name: `npx pnpm build:<name>`, `<name>` includes `msc`, `rs`, `pm`, `baj`, `fk`
-- Run: `npm run dev`

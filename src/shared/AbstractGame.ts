@@ -95,13 +95,12 @@ export default abstract class AbstractGame {
   public listener() {
     jQuery("#Play").on("click", (ev) => {
       ev.stopPropagation();
-      // this.sendEvent({ event: "PREPARING" }), console.log("PREPARING");
-      // jQuery("#Loading").css("display", "flex").fadeIn();
-      this.startGame();
+      this.sendEvent({ event: "PREPARING" }), console.log("PREPARING");
+      jQuery("#Loading").css("display", "flex").fadeIn();
     });
     jQuery("#PlayTest").on("click", (ev) => {
       ev.stopPropagation();
-      this.playTest();
+      this.playTest()
     });
     jQuery(".btn-back").on("click", (ev) => {
       ev.stopPropagation();
